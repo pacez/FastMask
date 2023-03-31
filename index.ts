@@ -30,8 +30,13 @@ export default class FastMask {
     show = () => {
         document.body.appendChild(this.$mask);
     }
+    
+    hidden = () => {
+        document.body.removeChild(this.$mask);
+    }
 
     destroy = () => {
-        document.body.removeChild(this.$mask);
+        this.hidden();
+        this.$mask = null; 
     }
 }
